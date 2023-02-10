@@ -39,7 +39,10 @@ export default function PickerItem({
       testID={testID}
       value={value}
       label={label}>
-      <Text style={{transform: "-90deg"}}> {label}</Text>
+      <Text style={{transform: '-90deg', backgroundColor: 'red'}}>
+        {' '}
+        {label}
+      </Text>
     </Option>
   );
 }

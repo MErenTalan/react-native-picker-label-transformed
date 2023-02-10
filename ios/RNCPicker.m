@@ -20,7 +20,6 @@
   if ((self = [super initWithFrame:frame])) {
     _color = [UIColor redColor];
     _font = [UIFont systemFontOfSize:21]; // TODO: selected title default should be 23.5
-
     _selectedIndex = NSNotFound;
     _textAlign = NSTextAlignmentCenter;
     _numberOfLines = 1;
@@ -113,7 +112,7 @@ numberOfRowsInComponent:(__unused NSInteger)component
   label.font = _font;
 
   label.textColor = [RCTConvert UIColor:_items[row][@"textColor"]] ?: _color;
-
+  label.transform = CGaffineTransformMakeRotation(M_PI / 2);
   label.textAlignment = _textAlign;
   label.text = [self pickerView:pickerView titleForRow:row forComponent:component];
   label.accessibilityIdentifier = _items[row][@"testID"];
